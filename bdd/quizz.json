@@ -1,0 +1,160 @@
+[
+    {"libelle_question":"Quelle était la concentration de GES dans l'atmosphère en 1789 ?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 3,
+    "reponse":[
+        {"libelle_reponse": 280, 
+        "valide": true},
+        {"libelle_reponse": 375, 
+        "valide": false},
+        {"libelle_reponse": 0, 
+        "valide": false}
+    ]
+    },
+    {
+    "libelle_question":"Quelle était la concentration de GES dans l'atmosphère en 1914 ?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 3,
+    "reponse":[
+        {"libelle_reponse": 280, 
+        "valide": true},
+        {"libelle_reponse": 375, 
+        "valide": false},
+        {"libelle_reponse": 0, 
+        "valide": false}
+    ]
+    },
+    {
+    "libelle_question":"Quelle était la concentration de GES dans l'atmosphère en 2018 ?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 3,
+    "reponse":[
+        {"libelle_reponse": 500, 
+        "valide": false},
+        {"libelle_reponse": 375, 
+        "valide": true},
+        {"libelle_reponse": 150, 
+        "valide": false}
+    ]
+    },
+    {
+    "libelle_question":"L'humanité est responsable des changements climatiques ?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 2,
+    "reponse":[
+        {"libelle_reponse": "Vrai", 
+        "valide": true},
+        {"libelle_reponse": "Faux", 
+        "valide": false}
+    ]
+    },
+    {
+    "libelle_question":"Quelles sont les principales sources d'émission de GES en France / dans le monde en 2018?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 3,
+    "reponse":[
+        {"libelle_reponse": "avion", 
+        "valide": false},
+        {"libelle_reponse": "train", 
+        "valide": true},
+        {"libelle_reponse": "velo", 
+        "valide": false}
+    ]
+    },
+    {
+    "libelle_question":"Combien de GES (TeqCO2) ément un français chaque année?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 3,
+    "reponse":[
+        {"libelle_reponse": 10, 
+        "valide": false},
+        {"libelle_reponse": 20, 
+        "valide": true},
+        {"libelle_reponse": 30, 
+        "valide": false}
+    ]
+    },
+    {
+    "libelle_question":"A partir de maintenant, combien au maximum chaque être humain devrait émettre de GES (TeqCO2) par an pour rester sous le seuil des 2% de réchauffement global ?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 3,
+    "reponse":[
+        {"libelle_reponse": 0, 
+        "valide": false},
+        {"libelle_reponse": 2, 
+        "valide": true},
+        {"libelle_reponse": 3, 
+        "valide": false}
+    ]
+    },
+    {
+    "libelle_question":"Réduire nos émissions de GES ne sert plus à rien, il faut s'adapter aux changements climatiques ?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 2,
+    "reponse":[
+        {"libelle_reponse": " Vrai", 
+        "valide": false},
+        {"libelle_reponse": "Faux", 
+        "valide": true}
+    ]
+},
+{
+    "libelle_question":"Combien de fois par semaine consommez-vous de la viande ?",
+    "indication":"",
+    "type_reponse":"radio",
+    "nbr_reponse": 4,
+    "reponse":[
+        {"libelle_reponse": " 0", 
+        "valide": true},
+        {"libelle_reponse": "De 1 à 3", 
+        "valide": false},
+        {"libelle_reponse": "De 4 à 7", 
+        "valide": false},
+        {"libelle_reponse": "Plus de 8", 
+        "valide": false}
+    ]
+    },
+    {
+    "libelle_question":"Quels légumes ne devrait-on pas trouver sur nos étals au mois de décembre?",
+    "indication":"plusieurs choix possibles",
+    "type_reponse":"checkbox",
+    "nbr_reponse": 8,
+    "reponse":[
+        {"libelle_reponse": "Courgettes", 
+        "valide": false},
+        {"libelle_reponse": "Courges", 
+        "valide": true},
+        {"libelle_reponse": "Tomates", 
+        "valide": true},
+        {"libelle_reponse": "Fenouils", 
+        "valide": true},
+        {"libelle_reponse": "Haricots verts", 
+        "valide": true},
+        {"libelle_reponse": "Pommes de terre", 
+        "valide": true},
+        {"libelle_reponse": "Courges", 
+        "valide": true},
+        {"libelle_reponse": "Courges", 
+        "valide": true}
+    ]
+    },
+    {
+    "libelle_question":"Réduire nos émissions de GES ne sert plus à rien, il faut s'adapter aux changements climatiques ?",
+    "type_reponse":"radio",
+    "nbr_reponse": 2,
+    "reponse":[
+        {"libelle_reponse": " Vrai", 
+        "valide": false},
+        {"libelle_reponse": "Faux", 
+        "valide": true}
+    ]
+    }
+]
