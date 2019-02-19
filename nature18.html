@@ -13,59 +13,19 @@
 
     </head>
     <body>
-        <section class="container">
-            <article name="données" class="well form-inline pull-left col-lg-8">
-                <legend>Quizz Nature18</legend>
-                <label id = "quest"></label><br>
-                <label class="container" id="cont0">
-                    <input type="radio" name="radio" id="rep0">
-                    <label id="lab0" for="rep0"></label>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container" id="cont1">
-                    <input type="radio" name="radio" id="rep1">
-                    <label id="lab1" for="rep1"></label>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container" id="cont2" style="display:none">
-                    <input type="radio" name="radio" id="rep2">
-                    <label id="lab2" for="rep2"></label>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container" id="cont3" style="display:none">
-                    <input type="radio" name="radio" id="rep3">
-                    <label id="lab3" for="rep3"></label>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container" id="cont4" style="display:none">
-                    <input type="radio" name="radio" id="rep4">
-                    <label id="lab4" for="rep4"></label>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container" id="cont5" style="display:none">
-                    <input type="radio" name="radio" id="rep5">
-                    <label id="lab5" for="rep5"></label>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container" id="cont6" style="display:none">
-                    <input type="radio" name="radio" id="rep6">
-                    <label id="lab6" for="rep6"></label>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container" id="cont7" style="display:none">
-                    <input type="radio" name="radio" id="rep7">
-                    <label id="lab7" for="rep7"></label>
-                    <span class="checkmark"></span>
-                </label>
-                <button class="btn btn-primary" type="submit" onclick="executerRequete(lireSuivant)"><span class="glyphicon glyphicon-play"> </span> Question suivante</button>
-                <!-- <button class="btn btn-primary" type="submit" onclick="executerRequete(lirePrecedent)"><span class="glyphicon glyphicon-step-backward"> </span> Lecture arrière</button> -->
-            </article>
-        </section>
+        <div class="container" id="quiz">
+            <p id="cont"></p>
+            <form id="reponse">
+ 
+            </form>
+            <button class="btn btn-primary" type="submit" onclick="executerRequete(lireSuivant)"><span class="glyphicon glyphicon-play"> </span> Question suivante</button>
+        </div>
 
+        <div class="container-fluid">
+            <img src="images/grass.png" alt="Herbe">
+        </div>  
         <footer>
-            <div class="container-fluid">
-                <img src="images/grass.png" alt="Herbe">
-            </div>           
+        
         </footer>
     </body>
 </html>

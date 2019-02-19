@@ -31,33 +31,32 @@ function executerRequete(callback) {
 function lireSuivant() {
     // connaitre le nombre d'articles dans le catalogue
     var longueur = catalogue.length;
-    var libelle = catalogue[index].libelle_question;
-
     // manipulation du DOM pour afficher les caractéristiques de l'article
-    var parent = document.getElementById("quiz");
-    var child = document.getElementById("cont");
-    var para = document.createElement("p");
-    para.setAttribute("id","cont");
-    var node = document.createTextNode(libelle);
-    para.appendChild(node);
-    parent.replaceChild(para,child);
-
+    document.getElementById("quest").innerHTML = catalogue[index].libelle_question;
+    // efface les div de réponse
+    for (i=0; i<8; i++)
+    {
+        var numdiv="cont"+i;
+        document.getElementById(numdiv).style.display = "none";
+    }  
     // connaitre le nombre de réponse à afficher
     nbReponse = catalogue[index].nbr_reponse;
-    type = catalogue[index].type_reponse;
 
-    // afficher les réponses
+    // si necessaire changer le type radio en checkbox
+    type = catalogue[index].type_reponse;
+    if (type == "checkbox"){
+
+    } else if (type == "radio") {
+        
+    }
     for (i=0; i<nbReponse; i++)
     {
-        var para = document.createElement("input");
-        var libelle = catalogue[index].reponse[i].libelle_reponse;
-        var node = document.createTextNode(libelle);
-        para.setAttribute("type",type);
-        para.setAttribute("name",type);
-        para.appendChild(node);
-        var element = document.getElementById("reponse");
-        element.appendChild(para);
-
+        var numlabel='lab'+i;
+        var numdiv='cont'+i;
+        var numInput='id'+i;
+        // document.getElementById(numInput).style.type = type;
+        document.getElementById(numdiv).style.display = "block";
+        document.getElementById(numlabel).textContent = catalogue[index].reponse[i].libelle_reponse;
     }    
     if (index < longueur - 1) {
         index++;
