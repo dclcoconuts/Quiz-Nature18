@@ -42,21 +42,41 @@ function lireSuivant() {
     para.appendChild(node);
     parent.replaceChild(para,child);
 
+// effacer les réponses précedentes
+    if (index != 0){
+        for (i=0; i<nbReponse; i++)
+        {
+        var parent = document.getElementById("reponse");
+        var child = document.getElementById("id"+i);
+        parent.removeChild(child);
+        var label = document.getElementById('label'+i);
+        parent.removeChild(label);
+        
+        }
+    } 
+
     // connaitre le nombre de réponse à afficher
     nbReponse = catalogue[index].nbr_reponse;
     type = catalogue[index].type_reponse;
 
+
     // afficher les réponses
     for (i=0; i<nbReponse; i++)
     {
+        var li = document.createElement('li');
         var para = document.createElement("input");
         var libelle = catalogue[index].reponse[i].libelle_reponse;
-        var node = document.createTextNode(libelle);
         para.setAttribute("type",type);
+        para.setAttribute("id", "id"+i);
         para.setAttribute("name",type);
-        para.appendChild(node);
+        li.appendChild(para);
+        var label = document.createElement("label");
+        label.setAttribute("for", "id"+i);
+        label.setAttribute("id", "label"+i);
+        label.innerHTML = libelle;
+        li.appendChild(label);
         var element = document.getElementById("reponse");
-        element.appendChild(para);
+        element.appendChild(li);
 
     }    
     if (index < longueur - 1) {
