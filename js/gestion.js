@@ -53,15 +53,6 @@ function lireSuivant() {
     }
 }
 
-// function lirePrecedent() {
-//     document.getElementById("nom").innerHTML = catalogue[index].nom;
-//     document.getElementById("desc").innerHTML = catalogue[index].desc;
-//     document.getElementById("qte").innerHTML = catalogue[index].qte;
-//     document.getElementById("prix").innerHTML = catalogue[index].prix;
-//     if (index > 0) {
-//         index--;
-//     }
-// }
 
 // on initialise la lecture au premier élément
 executerRequete(lireSuivant);
