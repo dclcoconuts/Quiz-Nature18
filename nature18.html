@@ -15,18 +15,19 @@
 
     </head>
     <body>
-        <div class="container" id="quiz">
+        
+        <div class="card container" id="quiz">
+            <div class="card-header">
+                <img src="images/logo.png" class="" alt="...">
+            </div>
             <p id="cont"></p>
             <ul>
                 <form id="reponse">
                 </form>
             </ul>
             <button class="btn btn-success" type="submit" onclick="afficheResultat()"><span class="glyphicon glyphicon-play"> </span>Réponse</button>
-        </div>
-            <button id="suivant" class="btn btn-success" onclick="executerRequete(lireSuivant)"><span class="glyphicon glyphicon-play"> </span>Question suivante</button>        <footer>
-            <div class="container-fluid">
-                <img src="images/grass.png" alt="Herbe">
-            </div>         
-        </footer>
+            <button id="suivant" class="btn btn-secondary" onclick="executerRequete(lireSuivant)"><span class="glyphicon glyphicon-play"> </span>Question suivante</button>
+                <img class="card-img-top" src="images/grass.png" alt="Herbe">
+        </div>   
     </body>
 </html>
