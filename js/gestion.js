@@ -34,20 +34,29 @@ function executerRequete(callback) {
 }
 
 function afficheResultat() {
-    // cacher le bouton 
-    document.getElementById("boutResult").style.display = "none";
+    // si pas de réponse sélectionnée alors pas de possibilité de cliquer sur bouton reponse
+    var k=0;
+    for (i=0; i<nbReponse; i++) {
+		if (document.getElementById("id"+i).checked) {
+           k++;
+        }
+    }   
+    if (k==0){
+        return;
+    }     
+
     // recuperer les valeurs sélectionnées
     var valeur = [];
     var ind = index-1;
     for (i=0; i<nbReponse; i++) {
         j=0;
 		if (document.getElementById("id"+i).checked) {
+            document.getElementById("boutResult").style.display = "none";
             valeur[j] = i;
             // alert(j);
             // alert(valeur[j]);
         // si on a une seule réponse possible
         if (catalogue[ind].reponse_possible == 1) {
-
             // alert(catalogue[ind].reponse[valeur[j]].valide );
             // alert(catalogue[ind].libelle_question);
             // verification dans le fichier des réponses
@@ -61,8 +70,10 @@ function afficheResultat() {
                 break;
             }
         } else {
-            // plusieurs réponses possible
-            // for ()
+            // plusieurs réponses possible, verification 
+            console.log(valeur[j]);
+            
+
         }
         }
         j++;
@@ -124,11 +135,13 @@ function lireSuivant() {
             var child = document.getElementById("li"+i);
             parent.removeChild(child);     
 
-        }  
+        } 
+        if (document.getElementById("res")){
         // efface la zone résultat
         var parent = document.getElementById("resultat");
         var child = document.getElementById("res");
         parent.removeChild(child); 
+        }
       }
 
     // connaitre le nombre de réponse à afficher
