@@ -1,3 +1,8 @@
+body{
+  background-color: #668100;
+
+}
+
 footer{
     position: fixed;
     left: 0;
@@ -9,4 +14,22 @@ footer{
 img{
   width:100%;
   height:100%;
+}
+
+#quiz{
+  width: 70%;
+  height: 100%;
+  background-color:#845d1a;
+  display : block;
+  text-align: center;
+}
+
+li{
+  list-style: none;
+  font-size: 1em;
+}
+
+#cont{
+  font-size : 2em;
+  margin-top: 20%
 }
