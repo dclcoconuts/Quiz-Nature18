@@ -34,33 +34,68 @@ function executerRequete(callback) {
 }
 
 function afficheResultat() {
-    //
-
+    // cacher le bouton 
+    document.getElementById("boutResult").style.display = "none";
     // recuperer les valeurs sélectionnées
     var valeur = [];
+    var ind = index-1;
     for (i=0; i<nbReponse; i++) {
         j=0;
 		if (document.getElementById("id"+i).checked) {
             valeur[j] = i;
-            alert(valeur[j] + ' a été sélectionné');
+            // alert(j);
+            // alert(valeur[j]);
+        // si on a une seule réponse possible
+        if (catalogue[ind].reponse_possible == 1) {
+
+            // alert(catalogue[ind].reponse[valeur[j]].valide );
+            // alert(catalogue[ind].libelle_question);
             // verification dans le fichier des réponses
-            if (catalogue[index].reponse[valeur[j]].valide == true){
-                alert ("bonne réponse");
-
+            if (catalogue[ind].reponse[valeur[j]].valide == true){
+ 
+                success = true;
+                break;
             } else {
-                alert ("mauvaise réponse");
 
+                success = false;
+                break;
             }
+        } else {
+            // plusieurs réponses possible
+            for ()
+        }
         }
         j++;
-         
+           
     }
-    // verification dans le fichier des réponses
-    catalogue[index].reponse[i]
 
+    if (success == true){
+        var libReponse = catalogue[ind].argument_bonnereponse;
+
+        var child = document.createElement("h3");
+        var node = document.createTextNode(libReponse);
+        var node = document.createTextNode(libReponse);
+        child.setAttribute("id","res");
+        child.appendChild(node);
+
+        var parent = document.getElementById("resultat");
+        parent.appendChild(child);
+    }else{
+        var libReponse = catalogue[ind].argument_mauvaisereponse;
+
+        var child = document.createElement("h3");
+        var node = document.createTextNode(libReponse);
+        child.setAttribute("id","res");
+        child.appendChild(node);
+
+        var parent = document.getElementById("resultat");
+        parent.appendChild(child);
+    }
 }
 
 function lireSuivant() {
+
+    document.getElementById("boutResult").style.display = "inline";
     // connaitre le nombre de question dans le fichier Json
     var longueur = catalogue.length;
     var libelle = catalogue[index].libelle_question;
@@ -90,6 +125,10 @@ function lireSuivant() {
             parent.removeChild(child);     
 
         }  
+        // efface la zone résultat
+        var parent = document.getElementById("resultat");
+        var child = document.getElementById("res");
+        parent.removeChild(child); 
       }
 
     // connaitre le nombre de réponse à afficher
