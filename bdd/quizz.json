@@ -3,6 +3,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 3,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": 280, 
         "valide": true},
@@ -20,6 +21,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 3,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": 0, 
         "valide": true},
@@ -37,6 +39,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 3,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": 500, 
         "valide": false},
@@ -54,6 +57,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 2,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Vrai", 
         "valide": true},
@@ -69,6 +73,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 3,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "avion", 
         "valide": false},
@@ -86,6 +91,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 3,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": 10, 
         "valide": false},
@@ -103,6 +109,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 3,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": 0, 
         "valide": false},
@@ -120,6 +127,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 2,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Vrai", 
         "valide": false},
@@ -135,6 +143,7 @@
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 4,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "0", 
         "valide": true},
@@ -151,9 +160,10 @@
     },
     {
     "libelle_question":"Quels légumes ne devrait-on pas trouver sur nos étals au mois de décembre?",
-    "indication":"Plusieurs choix possibles",
+    "indication":"4 choix possibles",
     "type_reponse":"checkbox",
     "nbr_reponse": 8,
+    "reponse_possible": 4,
     "reponse":[
         {"libelle_reponse": "Courgettes", 
         "valide": false},
@@ -178,8 +188,10 @@
     },
     {
     "libelle_question":"La \"déforestation importée\" correspond aux importations de mobilier en bois exotique pour le marché français ?",
+    "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 2,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Vrai", 
         "valide": false},
@@ -192,8 +204,10 @@
     },
     {
     "libelle_question":"Combien d'émissions de GES représente en moyenne en AR Paris/New York en avion ?",
+    "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 3,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Pas beaucoup", 
         "valide": false},
@@ -208,8 +222,10 @@
     },
     {
     "libelle_question":"Quelles actions sont les plus efficaces au quotidien pour lutter contre les émissions de GES ?",
+    "indication":"",
     "type_reponse":"checkbox",
     "nbr_reponse": 5,
+    "reponse_possible": 3,
     "reponse":[
         {"libelle_reponse": "Manger un panda", 
         "valide": false},
@@ -228,8 +244,10 @@
     },
     {
     "libelle_question":"Avez-vous déjà participé à une mobilisation en faveur du climat (pétition, rassemblement, manifestation, adhésion ou don à une association ?",
+    "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 2,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Oui", 
         "valide": false},
@@ -242,8 +260,10 @@
     },
     {
     "libelle_question":"Avez-vous changé vos habitudes de vie pour protéger le climat ?",
+    "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 2,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Oui", 
         "valide": false},
@@ -256,8 +276,10 @@
     },
     {
     "libelle_question":"Avez-vous déjà convaincu ou essayer de convaincre un(e) ami(e) de passer à l'action pour protéger le climat ?",
+    "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 2,
+    "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Oui", 
         "valide": false},

@@ -1,10 +1,15 @@
-// pointeur sur la position de l'article courant dans le catalogue
+// pointeur sur la position de la question courante dans le questionnaire
 var index = 0;
 // initialisation du catalogue
 var catalogue = [];
+// nbre de réponse à une question
+var nbReponse;
+// nbr de réponse possible
+var reponsePossible;
+var nbCheck;
 
 function executerRequete(callback) {
-    // on vérifie si le catalogue a déjà été chargé pour n'exécuter la requête AJAX
+    // on vérifie si le fichier a déjà été chargé pour n'exécuter la requête AJAX
     // qu'une seule fois
     if (catalogue.length === 0) {
         // on récupère un objet XMLHttpRequest
@@ -13,9 +18,9 @@ function executerRequete(callback) {
         xhr.onreadystatechange = function() {
             // test du statut de retour de la requête AJAX
             if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-                // on désérialise le catalogue et on le sauvegarde dans une variable
+                // on désérialise le questionnaire et on le sauvegarde dans une variable
                 catalogue = JSON.parse(xhr.responseText);
-                // on lance la fonction de callback avec le catalogue récupéré
+                // on lance la fonction de callback avec le questionnaire récupéré
                 callback();
             }
         }
@@ -23,17 +28,45 @@ function executerRequete(callback) {
         xhr.open("GET", "bdd/quizz.json", true);
         xhr.send();
     } else {
-        // on lance la fonction de callback avec le catalogue déjà récupéré précédemment
+        // on lance la fonction de callback avec le questionnaire déjà récupéré précédemment
         callback();
     }
 }
 
+function afficheResultat() {
+    //
+
+    // recuperer les valeurs sélectionnées
+    var valeur = [];
+    for (i=0; i<nbReponse; i++) {
+        j=0;
+		if (document.getElementById("id"+i).checked) {
+            valeur[j] = i;
+            alert(valeur[j] + ' a été sélectionné');
+            // verification dans le fichier des réponses
+            if (catalogue[index].reponse[valeur[j]].valide == true){
+                alert ("bonne réponse");
+
+            } else {
+                alert ("mauvaise réponse");
+
+            }
+        }
+        j++;
+         
+    }
+    // verification dans le fichier des réponses
+    catalogue[index].reponse[i]
+
+}
+
 function lireSuivant() {
-    // connaitre le nombre d'articles dans le catalogue
+    // connaitre le nombre de question dans le fichier Json
     var longueur = catalogue.length;
     var libelle = catalogue[index].libelle_question;
-    console.log(longueur);
-    // manipulation du DOM pour afficher les caractéristiques de l'article
+    reponsePossible = catalogue[index].reponse_possible;
+    nbCheck = 0;
+    // manipulation du DOM pour afficher le libellé de la question
     var parent = document.getElementById("quiz");
     var child = document.getElementById("cont");
     var para = document.createElement("h3");
@@ -63,7 +96,6 @@ function lireSuivant() {
     nbReponse = catalogue[index].nbr_reponse;
     type = catalogue[index].type_reponse;
 
-
     // afficher les réponses
     for (i=0; i<nbReponse; i++)
     {
@@ -74,6 +106,9 @@ function lireSuivant() {
         para.setAttribute("type",type);
         para.setAttribute("id", "id"+i);
         para.setAttribute("name",type);
+        if (type=="checkbox"){
+            para.setAttribute("onclick","clickCheck(this);");           
+        }
         li.appendChild(para);
         var label = document.createElement("label");
         label.setAttribute("for", "id"+i);
@@ -91,3 +126,35 @@ function lireSuivant() {
 
 // on initialise la lecture au premier élément
 executerRequete(lireSuivant);
+
+	
+function isChecked(elmt)
+{
+    if( elmt.checked )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+function clickCheck(elmt)
+{
+    if( (nbCheck < reponsePossible) || (isChecked(elmt) == false) )
+    {
+        if( isChecked(elmt) == true )
+        {
+            nbCheck += 1;
+        }
+        else
+        {
+            nbCheck -= 1;
+        }
+    }
+    else
+    {
+        elmt.checked = '';
+    }
+}
