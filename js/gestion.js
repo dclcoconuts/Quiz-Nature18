@@ -184,16 +184,20 @@ function lireSuivant() {
         var element = document.getElementById("reponse");
         element.appendChild(li);
     }    
+
     if (index < longueur - 1) {
         index++;
-    }else 
+        console.log(longueur);
+        console.log(index);
+    }else if (index == longueur-1)
     { 
-        document.location.href="fin.html"
-    }
-
-
+        // changer texte bouton suivant
+        // changer valeur onclick
+        var bouton = document.getElementById("suivant");   
+        bouton.innerHTML = "Résultat";    
+        bouton.setAttribute("onclick", "fin()");
+    } 
 }
-
 
 // on initialise la lecture au premier élément
 executerRequete(lireSuivant);
@@ -201,6 +205,11 @@ executerRequete(lireSuivant);
 function retour() {    
     document.location.href="nature18.html";
 }
+
+function fin() {    
+    document.location.href="fin.html";
+}
+
 	
 function isChecked(elmt)
 {
