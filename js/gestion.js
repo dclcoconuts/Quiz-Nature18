@@ -92,6 +92,7 @@ function afficheResultat() {
         var node = document.createTextNode(libReponse);
         var node = document.createTextNode(libReponse);
         child.setAttribute("id","res");
+        child.setAttribute("class","alert alert-success");
         child.appendChild(node);
 
         var parent = document.getElementById("resultat");
@@ -102,6 +103,7 @@ function afficheResultat() {
         var child = document.createElement("h3");
         var node = document.createTextNode(libReponse);
         child.setAttribute("id","res");
+        child.setAttribute("class","alert alert-danger");
         child.appendChild(node);
 
         var parent = document.getElementById("resultat");
