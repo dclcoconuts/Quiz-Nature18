@@ -194,9 +194,9 @@
     "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Vrai", 
-        "valide": false},
+        "valide": true},
         {"libelle_reponse": "Faux", 
-        "valide": true}
+        "valide": false}
     ],
     "argument_bonnereponse":"C'est bien !!!",
     "argument_mauvaisereponse":"C'est pas bien !!!!",
@@ -222,7 +222,7 @@
     },
     {
     "libelle_question":"Quelles actions sont les plus efficaces au quotidien pour lutter contre les émissions de GES ?",
-    "indication":"",
+    "indication":"3 choix possibles",
     "type_reponse":"checkbox",
     "nbr_reponse": 5,
     "reponse_possible": 3,

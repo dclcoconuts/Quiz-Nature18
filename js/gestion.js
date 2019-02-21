@@ -48,36 +48,41 @@ function afficheResultat() {
     // recuperer les valeurs sélectionnées
     var valeur = [];
     var ind = index-1;
+    var j=0;
     for (i=0; i<nbReponse; i++) {
-        j=0;
-		if (document.getElementById("id"+i).checked) {
-            document.getElementById("boutResult").style.display = "none";
-            valeur[j] = i;
-            // alert(j);
-            // alert(valeur[j]);
-        // si on a une seule réponse possible
-        if (catalogue[ind].reponse_possible == 1) {
-            // alert(catalogue[ind].reponse[valeur[j]].valide );
-            // alert(catalogue[ind].libelle_question);
-            // verification dans le fichier des réponses
-            if (catalogue[ind].reponse[valeur[j]].valide == true){
- 
-                success = true;
-                break;
-            } else {
+  		if (document.getElementById("id"+i).checked) {
+                document.getElementById("boutResult").style.display = "none";
+                valeur[j] = i;
+                // alert(j);
+                // alert(valeur[j]);
+                console.log(valeur);  
+                j++; 
+        }
+    }
 
-                success = false;
-                break;
-            }
+    // si on a une seule réponse possible
+    if (catalogue[ind].reponse_possible == 1) {
+        // alert(catalogue[ind].reponse[valeur[j]].valide );
+        // alert(catalogue[ind].libelle_question);
+        // verification dans le fichier des réponses
+        if (catalogue[ind].reponse[valeur[0]].valide == true){
+            success = true;
         } else {
-            // plusieurs réponses possible, verification 
-            console.log(valeur[j]);
-            
-
+            success = false;
         }
+    } else {
+        // plusieurs réponses possible, verification 
+        success = true;
+        for (l=0; l<catalogue[ind].reponse_possible; l++){
+            console.log(catalogue[ind].reponse[valeur[l]].libelle_reponse);
+            console.log(catalogue[ind].reponse[valeur[l]].valide);
+            console.log(l);
+            console.log(catalogue[ind].reponse_possible);
+            if (catalogue[ind].reponse[valeur[l]].valide != true){
+                success = false;
+            };
+            console.log(success);
         }
-        j++;
-           
     }
 
     if (success == true){
@@ -110,6 +115,7 @@ function lireSuivant() {
     // connaitre le nombre de question dans le fichier Json
     var longueur = catalogue.length;
     var libelle = catalogue[index].libelle_question;
+    var indication = catalogue[index].indication;
     reponsePossible = catalogue[index].reponse_possible;
     nbCheck = 0;
     // manipulation du DOM pour afficher le libellé de la question
@@ -121,6 +127,11 @@ function lireSuivant() {
     para.appendChild(node);
     parent.replaceChild(para,child);
 
+    var parent = document.getElementById("cont");
+    var para = document.createElement("p");
+    var node = document.createTextNode(indication);
+    parent.appendChild(node);
+    
     // effacer les réponses précedentes
     if (index != 0){
         for (i=0; i<nbReponse; i++)
