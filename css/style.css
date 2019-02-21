@@ -1,3 +1,11 @@
+@font-face{
+  font-family: "BerlinSansFBRegular";
+  src: url("../fonts/BerlinSansFBRegular.ttf");
+}
+@font-face{
+  font-family:"Calibri";
+  src: url('../fonts/Calibri.ttf');
+}
 html{
   height:100%;
   width:100%;
@@ -27,11 +35,34 @@ body{
 .container{
   padding: 0;
 }
+ul{
+  display:flex;
+  justify-content: space-around;
+}
 li{
+  text-align: center;
   list-style: none;
   font-size: 1em;
+  background-color:lightgray;
+  border-radius: .25rem;
+  width: 10em;
+  margin: 2%;
+  padding: 2%;
 }
-
+#cont{
+  font-size : 2em;
+  font-family: "BerlinSansFBRegular";
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color:#668100;
+}
+label{
+  font-family: "BerlinSansFBRegular";
+  color:#668100;
+  font-size:1.5em;
+  margin-left: 5%;
+}
 /* 
 #quiz{
   width: 70%;
