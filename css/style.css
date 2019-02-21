@@ -70,7 +70,6 @@ ul{
   margin-bottom: 5%;
   color:#668100;
 }
-
 #resultat{
   font-size : 2em;
   font-family: "BerlinSansFBRegular";
@@ -199,4 +198,16 @@ code {
 .alert{
   margin-right: 2%;
   margin-left: 2%;
+}
+#boutResult{
+  font-family: "BerlinSansFBRegular";
+  font-weight: 1000;
+}
+#suivant{
+  font-family: "BerlinSansFBRegular"; 
+  font-weight: 1000;
+}
+#relancer{
+  font-family: "BerlinSansFBRegular"; 
+  font-weight: 1000;
 }
