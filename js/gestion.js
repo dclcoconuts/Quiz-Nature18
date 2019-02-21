@@ -53,12 +53,17 @@ function afficheResultat() {
   		if (document.getElementById("id"+i).checked) {
                 document.getElementById("boutResult").style.display = "none";
                 valeur[j] = i;
+                // alert(j);
+                // alert(valeur[j]);
+                console.log(valeur);  
                 j++; 
         }
     }
 
     // si on a une seule réponse possible
     if (catalogue[ind].reponse_possible == 1) {
+        // alert(catalogue[ind].reponse[valeur[j]].valide );
+        // alert(catalogue[ind].libelle_question);
         // verification dans le fichier des réponses
         if (catalogue[ind].reponse[valeur[0]].valide == true){
             success = true;
@@ -66,13 +71,17 @@ function afficheResultat() {
             success = false;
         }
     } else {
-        // plusieurs réponses possibles, verification 
+        // plusieurs réponses possible, verification 
         success = true;
-        // for (l=0; l<catalogue[ind].reponse_possible; l++){
-        for (l=0; l<valeur.length; l++){       
+        for (l=0; l<catalogue[ind].reponse_possible; l++){
+            console.log(catalogue[ind].reponse[valeur[l]].libelle_reponse);
+            console.log(catalogue[ind].reponse[valeur[l]].valide);
+            console.log(l);
+            console.log(catalogue[ind].reponse_possible);
             if (catalogue[ind].reponse[valeur[l]].valide != true){
                 success = false;
             };
+            console.log(success);
         }
     }
 
@@ -119,9 +128,10 @@ function lireSuivant() {
     parent.replaceChild(para,child);
 
     var parent = document.getElementById("cont");
-    var para = document.createElement("p");
-    var node = document.createTextNode(indication);
-    parent.appendChild(node);
+    var indic = document.createElement("p");
+    indic.innerHTML = indication;
+    indic.setAttribute("class", "indication font-italic text-muted");
+    parent.appendChild(indic);
     
     // effacer les réponses précedentes
     if (index != 0){
@@ -156,6 +166,7 @@ function lireSuivant() {
     {
         var li = document.createElement('li');
         li.setAttribute("id", "li"+i);
+        li.setAttribute("class", "inputGroup");
         var para = document.createElement("input");
         var libelle = catalogue[index].reponse[i].libelle_reponse;
         para.setAttribute("type",type);
