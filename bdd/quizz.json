@@ -212,7 +212,7 @@
         {"libelle_reponse": "Pas beaucoup", 
         "valide": false},
         {"libelle_reponse": "0", 
-        "valide": true},
+        "valide": false},
         {"libelle_reponse": "Beaucoup", 
         "valide": true}
     ],
@@ -250,9 +250,9 @@
     "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Oui", 
-        "valide": false},
+        "valide": true},
         {"libelle_reponse": "Non", 
-        "valide": true}
+        "valide": false}
     ],
     "argument_bonnereponse":"C'est bien !!!",
     "argument_mauvaisereponse":"C'est pas bien !!!!",
@@ -266,9 +266,9 @@
     "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Oui", 
-        "valide": false},
+        "valide": true},
         {"libelle_reponse": "Non", 
-        "valide": true}
+        "valide": false}
     ],
     "argument_bonnereponse":"C'est bien !!!",
     "argument_mauvaisereponse":"C'est pas bien !!!!",
@@ -282,9 +282,9 @@
     "reponse_possible": 1,
     "reponse":[
         {"libelle_reponse": "Oui", 
-        "valide": false},
+        "valide": true},
         {"libelle_reponse": "Non", 
-        "valide": true}
+        "valide": false}
     ],
     "argument_bonnereponse":"C'est bien !!!",
     "argument_mauvaisereponse":"C'est pas bien !!!!",

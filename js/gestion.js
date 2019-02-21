@@ -186,13 +186,21 @@ function lireSuivant() {
     }    
     if (index < longueur - 1) {
         index++;
+    }else 
+    { 
+        document.location.href="fin.html"
     }
+
+
 }
 
 
 // on initialise la lecture au premier élément
 executerRequete(lireSuivant);
 
+function retour() {    
+    document.location.href="nature18.html";
+}
 	
 function isChecked(elmt)
 {

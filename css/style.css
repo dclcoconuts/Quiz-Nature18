@@ -64,6 +64,16 @@ li{
   margin-bottom: 5%;
   color:#668100;
 }
+
+#resultat{
+  font-size : 2em;
+  font-family: "BerlinSansFBRegular";
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color:#668100;
+}
+
 label{
   font-family: "BerlinSansFBRegular";
   color:#668100;
