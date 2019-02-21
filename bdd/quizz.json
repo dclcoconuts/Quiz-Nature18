@@ -87,7 +87,7 @@
     "point": 4
     },
     {
-    "libelle_question":"Combien de GES (TeqCO2) ément un français chaque année?",
+    "libelle_question":"Combien de GES (TeqCO2) émet un français chaque année?",
     "indication":"",
     "type_reponse":"radio",
     "nbr_reponse": 3,
