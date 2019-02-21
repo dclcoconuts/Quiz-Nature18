@@ -53,17 +53,12 @@ function afficheResultat() {
   		if (document.getElementById("id"+i).checked) {
                 document.getElementById("boutResult").style.display = "none";
                 valeur[j] = i;
-                // alert(j);
-                // alert(valeur[j]);
-                console.log(valeur);  
                 j++; 
         }
     }
 
     // si on a une seule réponse possible
     if (catalogue[ind].reponse_possible == 1) {
-        // alert(catalogue[ind].reponse[valeur[j]].valide );
-        // alert(catalogue[ind].libelle_question);
         // verification dans le fichier des réponses
         if (catalogue[ind].reponse[valeur[0]].valide == true){
             success = true;
@@ -71,17 +66,13 @@ function afficheResultat() {
             success = false;
         }
     } else {
-        // plusieurs réponses possible, verification 
+        // plusieurs réponses possibles, verification 
         success = true;
-        for (l=0; l<catalogue[ind].reponse_possible; l++){
-            console.log(catalogue[ind].reponse[valeur[l]].libelle_reponse);
-            console.log(catalogue[ind].reponse[valeur[l]].valide);
-            console.log(l);
-            console.log(catalogue[ind].reponse_possible);
+        // for (l=0; l<catalogue[ind].reponse_possible; l++){
+        for (l=0; l<valeur.length; l++){       
             if (catalogue[ind].reponse[valeur[l]].valide != true){
                 success = false;
             };
-            console.log(success);
         }
     }
 
