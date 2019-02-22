@@ -2,11 +2,16 @@
 var index = 0;
 // initialisation du catalogue
 var catalogue = [];
+var catalogue = new Array();
 // nbre de réponse à une question
 var nbReponse;
 // nbr de réponse possible
 var reponsePossible;
 var nbCheck;
+// compteur des points
+var compteurPoint=0;
+// nombre de points max
+var pointMax=0;
 
 function executerRequete(callback) {
     // on vérifie si le fichier a déjà été chargé pour n'exécuter la requête AJAX
@@ -46,46 +51,40 @@ function afficheResultat() {
     }     
 
     // recuperer les valeurs sélectionnées
-    var valeur = [];
+    var valeur = new Array();
     var ind = index-1;
     var j=0;
     for (i=0; i<nbReponse; i++) {
   		if (document.getElementById("id"+i).checked) {
                 document.getElementById("boutResult").style.display = "none";
                 valeur[j] = i;
-                // alert(j);
-                // alert(valeur[j]);
-                console.log(valeur);  
                 j++; 
-        }
+        };
     }
 
     // si on a une seule réponse possible
     if (catalogue[ind].reponse_possible == 1) {
-        // alert(catalogue[ind].reponse[valeur[j]].valide );
-        // alert(catalogue[ind].libelle_question);
         // verification dans le fichier des réponses
         if (catalogue[ind].reponse[valeur[0]].valide == true){
             success = true;
+
         } else {
             success = false;
-        }
+        };
     } else {
-        // plusieurs réponses possible, verification 
+        // plusieurs réponses possibles, verification 
         success = true;
-        for (l=0; l<catalogue[ind].reponse_possible; l++){
-            console.log(catalogue[ind].reponse[valeur[l]].libelle_reponse);
-            console.log(catalogue[ind].reponse[valeur[l]].valide);
-            console.log(l);
-            console.log(catalogue[ind].reponse_possible);
+        // for (l=0; l<catalogue[ind].reponse_possible; l++){
+        for (l=0; l<valeur.length; l++){       
             if (catalogue[ind].reponse[valeur[l]].valide != true){
                 success = false;
-            };
-            console.log(success);
+            }
         }
     }
 
+
     if (success == true){
+        compteurPoint += catalogue[ind].point;
         var libReponse = catalogue[ind].argument_bonnereponse;
 
         var child = document.createElement("h3");
@@ -112,6 +111,16 @@ function afficheResultat() {
 }
 
 function lireSuivant() {
+
+    if (index === 0){
+        // compteur des points
+        compteurPoint=0;
+        // nombre de points max
+        pointMax=0;
+    }
+
+    // cumul des points de toutes les questions
+    pointMax += catalogue[index].point;  
 
     document.getElementById("boutResult").style.display = "inline";
     // connaitre le nombre de question dans le fichier Json
@@ -148,20 +157,18 @@ function lireSuivant() {
             var parent = document.getElementById("reponse");
             var child = document.getElementById("li"+i);
             parent.removeChild(child);     
-
         } 
         if (document.getElementById("res")){
-        // efface la zone résultat
-        var parent = document.getElementById("resultat");
-        var child = document.getElementById("res");
-        parent.removeChild(child); 
+            // efface la zone résultat
+            var parent = document.getElementById("resultat");
+            var child = document.getElementById("res");
+            parent.removeChild(child); 
         }
       }
 
     // connaitre le nombre de réponse à afficher
     nbReponse = catalogue[index].nbr_reponse;
     type = catalogue[index].type_reponse;
-
 
     // afficher les réponses
     for (i=0; i<nbReponse; i++)
@@ -189,14 +196,13 @@ function lireSuivant() {
 
     if (index < longueur - 1) {
         index++;
-        console.log(longueur);
-        console.log(index);
+
     }else if (index == longueur-1)
     { 
-        // changer texte bouton suivant
-        // changer valeur onclick
         var bouton = document.getElementById("suivant");   
-        bouton.innerHTML = "Résultat";    
+        // changer texte bouton suivant
+        bouton.innerHTML = "Résultat"; 
+        // changer valeur onclick   
         bouton.setAttribute("onclick", "fin()");
     } 
 }
@@ -204,15 +210,27 @@ function lireSuivant() {
 // on initialise la lecture au premier élément
 executerRequete(lireSuivant);
 
-function retour() {    
-    document.location.href="nature18.html";
-}
 
-function fin() {    
+
+function fin() {  
+    console.log(compteurPoint);
+    console.log(pointMax);
+    createCookie('monscore',compteurPoint,1);
+    createCookie('scoremax',pointMax,1);
     document.location.href="fin.html";
 }
 
-	
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
 function isChecked(elmt)
 {
     if( elmt.checked )

@@ -10,7 +10,7 @@
 
         <!-- lien vers le script contenant la fonction getXMLHttpRequest-->
         <script type="text/javascript" src="js/oXHR.js"></script>
-        <script type="text/javascript" src="js/gestion.js"></script>       
+        <script type="text/javascript" src="js/score.js"></script>       
 
 
     </head>
@@ -19,7 +19,15 @@
         <img src="images/logo.png" class="logo" alt="...">
         <div class="card container" id="quiz">
             <div id="cont">
+
                 <h1>Merci d'avoir participé</h1>
+                <br>
+                <h2>Votre score est de </h2>
+                <h2 id="compteurPoint"></h2><h2>/</h2>
+                <h2 id="pointMax"></h2>
+                <br>
+                <script type="text/javascript">score()</script>
+
                 <p>Si vous souhaitez poursuivre votre engagement pour la nature 
                 vous pouvez nous laisser votre adresse email afin de recevoir 
                 notre actualité</p>
